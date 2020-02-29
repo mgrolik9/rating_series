@@ -1,0 +1,27 @@
+{% extends 'home_base.html' %}
+{% block content %}
+    <div style="width: 70%; height: auto;">
+        <div align="center">
+            <div class="jumbotron">
+            <form action="" method="post">
+                {% csrf_token %}
+                 {{form.as_p}}
+                 <input type="submit" name="search" class="btn btn-primary" value="Search">
+                </br>
+                </br>
+                {% if response %}
+                <p class="text-danger"> {{response}}</p>
+                {% endif %}
+            </form>
+                <hr class="my-4">
+                </br>
+                <h1 class="display-4">Ostatnio szukane seriale</h1>
+                </br>
+                {% for show in shows %}
+                <h5><a href="/show/{{show.id}}/" class="card-link">{{show.title}}</a></h5>
+                {% endfor %}
+                </br>
+            </div>
+        </div>
+    </div>
+{% endblock %}

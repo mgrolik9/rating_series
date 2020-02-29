@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+
+<div align="center">
+    <div style="width: 70%; height: auto;">
+        <div class="jumbotron">
+            <form action="" method="post">
+            {% csrf_token %}
+                <h1 class="display-4">Witaj!</h1>
+            <p class="lead">Jeśli jesteś już użytkownikiem naszego serwisu do oceny seriali </p>
+             <input name="login" type="submit" class="btn btn-primary" value="Log in">
+             </br>
+                <hr class="my-4">
+             </br>
+                 <p>Jeśli chcesz dołączyć</p>
+            <input name="register" type="submit" class="btn btn-primary" value="Register">
+             </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

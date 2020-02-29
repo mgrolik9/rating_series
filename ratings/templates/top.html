@@ -1,0 +1,23 @@
+{% extends 'home_base.html' %}
+{% block content %}
+ <div style="width: 70%; height: auto;">
+        <div align="center">
+            <div class="jumbotron">
+                <h1>Oceny</h1>
+                <hr class="my-4">
+                {% for show in shows %}
+                    <div>
+                        <h5><a href="/show/{{show.id}}/" class="card-link">{{show.title}}</a></h5>
+                        {% if show.rating_avg == None %}
+                            <p class="text-danger">Brak ocen :(</p>
+                        {% else %}
+                        <p class="font-italic">{{show.rating_avg|floatformat}}</p>
+                        {% endif %}
+                    </div>
+                <hr class="my-4">
+                {% endfor %}
+            </div>
+        </div>
+ </div>
+{% endblock %}
+

@@ -1,0 +1,28 @@
+{% extends 'home_base.html' %}
+{% block content %}
+ <div style="width: 70%; height: auto;">
+        <div align="center">
+            <div class="jumbotron">
+
+                <h2>Twoje polecane seriale</h2>
+                <hr class="my-4">
+                {% if response %}
+                {{response}}
+                {% endif %}
+                {% for key, value in user_recommendations %}
+                <div>
+                    <h4><a href="/show/{{key.id}}/" class="card-link">{{key.title}}</a></h4>
+                    </br>
+                    <img src="{{value}}">
+                    </br>
+                </div>
+                </br>
+                <a href="/delete/{{key.id}}"class="badge badge-pill badge-danger" >Delete</a>
+                <hr class="my-4">
+             </br>
+             </br>
+                {% endfor %}
+            </div>
+        </div>
+ </div>
+{% endblock %}

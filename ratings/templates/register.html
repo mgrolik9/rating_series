@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+<div align="center">
+    <form action="" method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        </br>
+        <input type="submit" class="btn btn-primary" value="Register">
+       </br>
+    </form>
+    </br>
+    <button class="btn btn-light"><a href="/">Back</a></button>
+    </br>
+    {% if response %}
+     <p class="text-danger">{{response}}</p>
+    {% endif %}
+</div>
+{% endblock %}

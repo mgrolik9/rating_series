@@ -1,0 +1,43 @@
+{% extends 'home_base.html' %}
+{% block content %}
+ <div style="width: 70%; height: auto;">
+        <div align="center">
+            <div class="jumbotron">
+                <img src="{{poster}}">
+                </br>
+                </br>
+                <h2>{{show.title}}</h2> <p>({{show.year}})</p>
+                <div class="badge badge-primary text-wrap" style="width: 6rem;">
+                {{show.get_platform_display}}
+                </div>
+                </br>
+                </br>
+                </br>
+                <a href="/rate/{{show.id}}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Rate this show</a>
+                </br>
+                </br>
+                </br>
+                    <table class="table table-sm">
+                      <tbody>
+                         <tr>
+                             <th scope="row"></th>
+                             <td><h5>Username</h5></td>
+                             <td><h5>Rating</h5></td>
+                             <td><h5>Comment</h5></td>
+                         </tr>
+
+                        {% for rating in ratings %}
+                         <tr>
+                             <th scope="row">#</th>
+                             <td><a href="/user_profile/{{rating.user.id}}" class="card-link">{{rating.user.username}}</a></td>
+                             <td><p style="color: blue">{{rating.get_rating_display}}/5</p></td>
+                            <td>{{rating.comment}}</td>
+                         </tr>
+                        {% endfor %}
+                         </tbody>
+                    </table>
+            </div>
+        </div>
+ </div>
+{% endblock %}
+

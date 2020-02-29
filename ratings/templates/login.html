@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+<div class="mx-auto" style="width: 200px;" >
+    <form action="" method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        </br>
+        <input type="submit" class="btn btn-primary" value="Log in">
+       </br>
+       </br>
+        <button class="btn btn-light"><a href="/">Back</a></button>
+         </form>
+    </br>
+    {% if response %}
+    <p class="text-danger">{{response}}</p>
+    {% endif %}
+</div>
+{% endblock %}
