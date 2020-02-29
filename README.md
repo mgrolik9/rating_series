@@ -5,5 +5,3 @@ Web app, where users can:
 - add series to personal recommendations set,
 - delete series from personal recommendations set,
 - view others sets and general top rated series.
-
-
