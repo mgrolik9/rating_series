@@ -7,3 +7,4 @@ Web app, where users can:
 - view others sets and general top rated series.
 
 
+[]!(images_readme/main.png)
