@@ -15,7 +15,7 @@ Show and rate page:
 
 ![](images_readme/show.png)
 
-1[](images_readme/rate.png)
+![](images_readme/rate.png)
 
 Recommendations page:
 
